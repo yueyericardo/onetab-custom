@@ -8,8 +8,8 @@ function formatDate(date) {
         month = '' + (d.getMonth() + 1),
         day = '' + d.getDate(),
         year = d.getFullYear(),
-        hour = d.getHours(),
-        minute = d.getMinutes();
+        hour = d.getHours().toString(),
+        minute = d.getMinutes().toString();
 
     if (month.length < 2)
         month = '0' + month;
@@ -46,7 +46,7 @@ function download() {
 
 function addDownloadButton() {
     var EKS = document.getElementById('settingsDiv');
-    tmp = `<div><div id="downloadbnt" class="clickable" style="font-size: 12.25px; color: #ff4242"><span style="vertical-align: middle;">Download as json</span></div></div>`;
+    tmp = `<div><div id="downloadbnt" class="clickable" style="font-size: 12.25px; color: #ff4242"><span style="vertical-align: middle;">Download as json [D]</span></div></div>`;
     var tmp_vcard = htmlToElements(tmp)[0];
     tmp_vcard.onclick = download;
     EKS.appendChild(tmp_vcard);
@@ -77,6 +77,14 @@ function onFileSelected(event) {
   reader.readAsText(selectedFile);
 }
 
+document.onkeyup = function(e) {
+    if (e.which == 68) {
+        // D -> Download
+        if (document.activeElement.tagName != "INPUT"){
+            download();            
+        }
+    }
+}
 window.onload = function() {
     setSeparatorColor();
     addImportButton();
