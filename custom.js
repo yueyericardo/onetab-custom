@@ -46,7 +46,7 @@ function download() {
 
 function addDownloadButton() {
     var EKS = document.getElementById('settingsDiv');
-    tmp = `<div><div id="downloadbnt" class="clickable" style="font-size: 12.25px;"><span style="vertical-align: middle;">Download as json</span></div></div>`;
+    tmp = `<div><div id="downloadbnt" class="clickable" style="font-size: 12.25px; color: #ff4242"><span style="vertical-align: middle;">Download as json</span></div></div>`;
     var tmp_vcard = htmlToElements(tmp)[0];
     tmp_vcard.onclick = download;
     EKS.appendChild(tmp_vcard);
