@@ -59,7 +59,7 @@ function clickFileInput(){
 
 function addImportButton() {
     var EKS = document.getElementById('settingsDiv');
-    tmp = `<div><div id="importbnt" class="clickable" style="font-size: 12.25px;"><input id="choose-file" type="file" style="display: none;"><span style="vertical-align: middle;">Import as json</span></div></div>`;
+    tmp = `<div><div id="importbnt" class="clickable" style="font-size: 12.25px;"><input id="choose-file" type="file" style="display: none;"><span style="vertical-align: middle;">Import from json</span></div></div>`;
     var tmp_vcard = htmlToElements(tmp)[0];
     tmp_vcard.onclick = clickFileInput;
     EKS.appendChild(tmp_vcard);
